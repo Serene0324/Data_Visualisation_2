@@ -1,0 +1,60 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Relationship Between Total Population and Student Enrolments by State (2022)",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week10/main/population_enrolments.csv",
+    "format": {
+        "type": "csv",
+        "parse": {
+        "total_population_actual": "number",
+        "total_students": "number",
+        "total_population": "number"
+        }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.total_students / datum.total_population_actual",
+      "as": "student_ratio"
+    }
+  ],
+  "mark": {
+    "type": "circle",
+    "opacity": 0.7,
+    "stroke": "black",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "x": {
+      "field": "total_population_actual",
+      "type": "quantitative",
+      "title": "Total Population",
+      "axis": {"format": "s"}
+    },
+    "y": {
+      "field": "total_students",
+      "type": "quantitative",
+      "title": "Total Students",
+      "axis": {"format": "s"}
+    },
+    "size": {
+      "field": "student_ratio",
+      "type": "quantitative",
+      "title": "Students per Population Ratio",
+      "scale": {"domain": [0, 1], "range": [50, 2000]}
+    },
+    "color": {
+      "field": "state",
+      "type": "nominal",
+      "legend": {"title": "State"}
+    },
+    "tooltip": [
+      {"field": "state", "type": "nominal"},
+      {"field": "total_population_actual", "type": "quantitative", "title": "Population", "format": ","},
+      {"field": "total_students", "type": "quantitative", "title": "Students", "format": ","},
+      {"field": "student_ratio", "type": "quantitative", "title": "Student Ratio", "format": ".2%"}
+    ]
+  }
+}
