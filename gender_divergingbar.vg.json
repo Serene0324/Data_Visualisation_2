@@ -19,7 +19,7 @@
     }
   },
   "spec": {
-    "width": 600,
+    "width": 865,
     "height": 200,
     "layer": [
       {
@@ -61,7 +61,7 @@
           "align": "center",
           "fontSize": 16,
           "fontWeight": "lighter",
-          "dx": 350,
+          "dx": 50,
           "dy": -100,
           "text": "Higher primary enrolment reflects larger birth cohorts (2010–2015)"
         },

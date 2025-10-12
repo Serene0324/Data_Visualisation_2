@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Relationship Between Total Population and Student Enrolments by State (2022)",
-  "width": 600,
-  "height": 400,
+  "width": 935,
+  "height": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week10/main/population_enrolments.csv",
     "format": {
@@ -30,25 +30,20 @@
     "x": {
       "field": "total_population_actual",
       "type": "quantitative",
-      "title": "Total Population",
-      "axis": {"format": "s"}
+      "title": "Total Population"
     },
     "y": {
       "field": "total_students",
       "type": "quantitative",
-      "title": "Total Students",
-      "axis": {"format": "s"}
+      "title": "Total Students"
     },
     "size": {
       "field": "student_ratio",
-      "type": "quantitative",
-      "title": "Students per Population Ratio",
-      "scale": {"domain": [0, 1], "range": [50, 2000]}
+      "type": "quantitative"
     },
     "color": {
       "field": "state",
-      "type": "nominal",
-      "legend": {"title": "State"}
+      "type": "nominal"
     },
     "tooltip": [
       {"field": "state", "type": "nominal"},
