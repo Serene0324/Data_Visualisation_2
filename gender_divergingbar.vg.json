@@ -1,0 +1,80 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Gender Distribution of Student Enrolments by State and Education Stage (2022)",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week10/main/enrolment_school_district.csv"
+  },
+  "transform": [
+    {"filter": "datum.sex == 'male' || datum.sex == 'female'"},
+    {
+      "calculate": "datum.sex == 'male' ? -toNumber(datum.students) : toNumber(datum.students)",
+      "as": "students_signed"
+    }
+  ],
+  "facet": {
+    "row": {
+      "field": "stage",
+      "type": "nominal",
+      "title": "Education Stage"
+    }
+  },
+  "spec": {
+    "width": 600,
+    "height": 200,
+    "layer": [
+      {
+        "mark": {"type": "bar"},
+        "encoding": {
+          "y": {
+            "field": "state",
+            "type": "nominal",
+            "sort": "-x",
+            "title": "State"
+          },
+          "x": {
+            "field": "students_signed",
+            "type": "quantitative",
+            "title": "Number of Students (Male ← | → Female)",
+            "axis": {"format": "s"}
+          },
+          "color": {
+            "field": "sex",
+            "type": "nominal",
+            "scale": {
+              "domain": ["male", "female"],
+              "range": ["#4C78A8", "#E45756"]
+            },
+            "legend": {"title": "Sex"}
+          },
+          "tooltip": [
+            {"field": "state", "type": "nominal"},
+            {"field": "stage", "type": "nominal"},
+            {"field": "sex", "type": "nominal"},
+            {"field": "students", "type": "quantitative"}
+          ]
+        }
+      },
+      {
+        "transform": [{"filter": "datum.stage == 'primary'"}],
+        "mark": {
+          "type": "text",
+          "align": "center",
+          "fontSize": 16,
+          "fontWeight": "lighter",
+          "dx": 350,
+          "dy": -100,
+          "text": "Higher primary enrolment reflects larger birth cohorts (2010–2015)"
+        },
+        "encoding": {
+          "x": {"datum": 0},
+          "y": {"datum": "Selangor"},
+          "color": {"value": "black"}
+        }
+      }
+    ]
+  },
+  "config": {
+    "facet": {"columns": 1},
+    "view": {"stroke": "transparent"}
+  }
+}
