@@ -15,7 +15,8 @@
     "row": {
       "field": "stage",
       "type": "nominal",
-      "title": "Education Stage"
+      "title": "Education Stage",
+      "sort": ["post-secondary", "secondary", "primary"]
     }
   },
   "spec": {
@@ -42,7 +43,7 @@
             "type": "nominal",
             "scale": {
               "domain": ["male", "female"],
-              "range": ["#4C78A8", "#E45756"]
+              "range": ["#90BAF9", "#FFB8F7"]
             },
             "legend": {"title": "Sex"}
           },
@@ -52,23 +53,6 @@
             {"field": "sex", "type": "nominal"},
             {"field": "students", "type": "quantitative"}
           ]
-        }
-      },
-      {
-        "transform": [{"filter": "datum.stage == 'primary'"}],
-        "mark": {
-          "type": "text",
-          "align": "center",
-          "fontSize": 16,
-          "fontWeight": "lighter",
-          "dx": 50,
-          "dy": -100,
-          "text": "Higher primary enrolment reflects larger birth cohorts (2010–2015)"
-        },
-        "encoding": {
-          "x": {"datum": 0},
-          "y": {"datum": "Selangor"},
-          "color": {"value": "black"}
         }
       }
     ]
