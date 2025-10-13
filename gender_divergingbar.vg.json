@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Gender Distribution of Student Enrolments by State and Education Stage (2022)",
   "data": {
-    "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week10/main/enrolment_school_district.csv"
+    "url": "https://raw.githubusercontent.com/Serene0324/Data_Visualisation_2/main/enrolment_school_district.csv"
   },
   "transform": [
     {"filter": "datum.sex == 'male' || datum.sex == 'female'"},

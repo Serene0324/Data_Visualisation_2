@@ -4,7 +4,7 @@
   "height": 500,
   "title": "Student Enrolments by Education Stages and States, Malaysia (2022)",
   "data": {
-    "url": "https://raw.githubusercontent.com/Serene0324/Homework_Week10/main/enrolment_school_district.csv"
+    "url": "https://raw.githubusercontent.com/Serene0324/Data_Visualisation_2/main/enrolment_school_district.csv"
   },
   "transform": [{ "filter": "datum.sex == 'both'" }],
   "layer": [
