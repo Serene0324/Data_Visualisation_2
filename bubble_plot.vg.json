@@ -1,12 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Relationship Between Total Population and Student Enrolments by State (2022)",
-    "fontSize": 18,
-    "anchor": "start"
-  },
-  "width": 915,
-  "height": 500,
+  "width": "container",
   "data": {
     "url": "https://raw.githubusercontent.com/Serene0324/Data_Visualisation_2/main/population_enrolments.csv",
     "format": {
@@ -60,7 +54,7 @@
         "color": {
           "field": "outlier_flag",
           "type": "nominal",
-          "title": "Category",
+          "title": "States",
           "scale": {
             "domain": ["Normal", "Outlier"],
             "range": ["#8E8994", "#47CDD7"]
@@ -69,7 +63,7 @@
         "tooltip": [
           {"field": "state", "type": "nominal", "title": "State"},
           {"field": "total_population_actual", "type": "quantitative", "title": "Population", "format": ","},
-          {"field": "total_students", "type": "quantitative", "title": "Students", "format": ","},
+          {"field": "total_students", "type": "quantitative", "title": "Number of Students", "format": ","},
           {"field": "student_ratio", "type": "quantitative", "title": "Student Ratio", "format": ".2%"}
         ]
       }

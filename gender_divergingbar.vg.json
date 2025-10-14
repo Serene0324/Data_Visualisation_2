@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Gender Distribution of Student Enrolments by State and Education Stage (2022)",
   "data": {
     "url": "https://raw.githubusercontent.com/Serene0324/Data_Visualisation_2/main/enrolment_school_district.csv"
   },
@@ -20,8 +19,7 @@
     }
   },
   "spec": {
-    "width": 865,
-    "height": 200,
+    "width": "container",
     "layer": [
       {
         "mark": {"type": "bar"},
@@ -35,7 +33,7 @@
           "x": {
             "field": "students_signed",
             "type": "quantitative",
-            "title": "Number of Students (Male ← | → Female)",
+            "title": "Number of Students",
             "axis": {"format": "s"}
           },
           "color": {
@@ -48,10 +46,10 @@
             "legend": {"title": "Sex"}
           },
           "tooltip": [
-            {"field": "state", "type": "nominal"},
-            {"field": "stage", "type": "nominal"},
-            {"field": "sex", "type": "nominal"},
-            {"field": "students", "type": "quantitative"}
+            {"field": "state", "type": "nominal", "title": "State"},
+            {"field": "stage", "type": "nominal", "title": "Education Stage"},
+            {"field": "sex", "type": "nominal", "title": "Sex"},
+            {"field": "students", "type": "quantitative", "title": "Number of Students"}
           ]
         }
       }

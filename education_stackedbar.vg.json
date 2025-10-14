@@ -1,8 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 930,
-  "height": 500,
-  "title": "Student Enrolments by Education Stages and States, Malaysia (2022)",
+  "width": "container",
   "data": {
     "url": "https://raw.githubusercontent.com/Serene0324/Data_Visualisation_2/main/enrolment_school_district.csv"
   },

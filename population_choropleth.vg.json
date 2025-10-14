@@ -1,12 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Population by State, Malaysia (2022)",
-  "width": 1000,
-  "height": 500,
+  "width": "container",
   "projection": {
     "type": "mercator",
     "center": [109.5, 4],
-    "scale": 2850
+    "scale": 1700
   },
   "layer": [
     {
@@ -42,18 +40,18 @@
           "lookup": "properties.name",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/Serene0324/Data_Visualisation_2/main/total_population_2022.csv"
+              "url": "https://raw.githubusercontent.com/Serene0324/Data_Visualisation_2/main/population_enrolments.csv"
             },
             "key": "state",
-            "fields": ["population"]
+            "fields": ["total_population_actual"]
           }
         },
-        { "filter": "isValid(datum.population)" },
+        { "filter": "isValid(datum.total_population_actual)" },
         {
-          "window": [{ "op": "sum", "field": "population", "as": "total_pop" }],
+          "window": [{ "op": "sum", "field": "total_population_actual", "as": "total_population" }],
           "frame": [null, null]
         },
-        { "calculate": "datum.population / datum.total_pop", "as": "population_normalized" }
+        { "calculate": "datum.total_population_actual / datum.total_population", "as": "population_normalized" }
       ],
       "mark": { "type": "geoshape", "stroke": "white", "strokeWidth": 0.5 },
       "encoding": {
@@ -65,7 +63,7 @@
         },
         "tooltip": [
           { "field": "properties.name", "type": "nominal", "title": "State" },
-          { "field": "population", "type": "quantitative", "title": "Population ('000)" },
+          { "field": "total_population_actual", "type": "quantitative", "title": "Population" },
           {
             "field": "population_normalized",
             "type": "quantitative",
