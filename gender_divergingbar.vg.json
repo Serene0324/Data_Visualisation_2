@@ -19,7 +19,8 @@
     }
   },
   "spec": {
-    "width": "container",
+    "width": 325,
+    "height": 200,
     "layer": [
       {
         "mark": {"type": "bar"},
