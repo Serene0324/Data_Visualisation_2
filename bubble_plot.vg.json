@@ -89,6 +89,6 @@
   ],
   "config": {
     "view": {"stroke": "transparent"},
-    "legend": {"labelFontSize": 12, "titleFontSize": 13}
+    "legend": {"labelFontSize": 10, "titleFontSize": 9}
   }
 }

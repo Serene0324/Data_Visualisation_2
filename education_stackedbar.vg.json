@@ -132,6 +132,6 @@
   ],
   "config": {
     "axis": { "labelFontSize": 12, "titleFontSize": 14 },
-    "legend": { "titleFontSize": 13, "labelFontSize": 12 }
+    "legend": { "titleFontSize": 10, "labelFontSize": 9 }
   }
 }

@@ -36,7 +36,15 @@ h1 {
     padding-left: 20px;
 }
 
-.description-left {
+.description-left p {
+  width: 90%;                 
+  column-count: 2;            
+  column-gap: 3em;          
+  text-align: left justify;        
+  margin-left: 4px;             
+}
+
+.description-left-bubble-plot p {
     padding-right: 20px;
 }
 
