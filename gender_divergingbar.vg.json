@@ -50,7 +50,7 @@
             {"field": "state", "type": "nominal", "title": "State"},
             {"field": "stage", "type": "nominal", "title": "Education Stage"},
             {"field": "sex", "type": "nominal", "title": "Sex"},
-            {"field": "students", "type": "quantitative", "title": "Number of Students"}
+            {"field": "students", "type": "quantitative", "title": "Number of Students", "format": "," }
           ]
         }
       }

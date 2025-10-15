@@ -95,7 +95,7 @@
         "tooltip": [
           { "field": "state", "type": "nominal", "title": "State" },
           { "field": "stage", "type": "nominal", "title": "Education Stage" },
-          { "field": "students", "type": "quantitative", "title": "Number of Students" }
+          { "field": "students", "type": "quantitative", "title": "Number of Students", "format": "," }
         ]
       }
     },
