@@ -26,6 +26,7 @@ body {
 
 .description h2,
 h1 {
+    font-family: 'Times New Roman', Times, serif;
     margin-top: 0px;
     margin: 0 auto 20px;
     text-align: left;
@@ -33,19 +34,13 @@ h1 {
 }
 
 .description-right {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-left: 20px;
 }
 
 .description-left p {
-  width: 90%;                 
-  column-count: 2;            
-  column-gap: 3em;          
-  text-align: left justify;        
-  margin-left: 4px;             
-}
-
-.description-left-bubble-plot p {
-    padding-right: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-right: 20px;           
 }
 
 .pure-g {
