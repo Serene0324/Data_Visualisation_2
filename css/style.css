@@ -38,6 +38,15 @@ h1 {
     padding-left: 20px;
 }
 
+.description-left-2-column p {
+  width: 90%;                
+  column-count: 2;           
+  column-gap: 3em;           
+  text-align: justify;      
+  margin: 0 auto; 
+  margin-left: 4px;          
+}
+
 .description-left p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-right: 20px;           
