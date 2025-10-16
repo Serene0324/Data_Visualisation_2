@@ -6,58 +6,58 @@
   "transform": [
     {"filter": "datum.sex == 'male' || datum.sex == 'female'"},
     {
-      "calculate": "datum.sex == 'male' ? -toNumber(datum.students) : toNumber(datum.students)",
+      "aggregate": [
+        {"op": "sum", "field": "students", "as": "total_students"}
+      ],
+      "groupby": ["state", "sex"]
+    },
+    {
+      "calculate": "datum.sex == 'male' ? -datum.total_students : datum.total_students",
       "as": "students_signed"
     }
   ],
-  "facet": {
-    "row": {
-      "field": "stage",
+  "width": "container",
+  "height": 350,
+  "mark": {"type": "bar"},
+  "encoding": {
+    "y": {
+      "field": "state",
       "type": "nominal",
-      "title": "Education Stage",
-      "sort": ["post-secondary", "secondary", "primary"]
-    }
-  },
-  "spec": {
-    "width": 325,
-    "height": 200,
-    "layer": [
+      "sort": "-x",
+      "title": "State"
+    },
+    "x": {
+      "field": "students_signed",
+      "type": "quantitative",
+      "title": "Number of Students",
+      "axis": {"format": "s"}
+    },
+    "color": {
+      "field": "sex",
+      "type": "nominal",
+      "scale": {
+        "domain": ["male", "female"],
+        "range": ["#1800A3", "#A30000"]
+      },
+      "legend": {
+        "title": "Sex",
+        "titleFontSize": 10, 
+        "labelFontSize": 9
+      }
+    },
+    "tooltip": [
+      {"field": "state", "type": "nominal", "title": "State"},
+      {"field": "sex", "type": "nominal", "title": "Sex"},
       {
-        "mark": {"type": "bar"},
-        "encoding": {
-          "y": {
-            "field": "state",
-            "type": "nominal",
-            "sort": "-x",
-            "title": "State"
-          },
-          "x": {
-            "field": "students_signed",
-            "type": "quantitative",
-            "title": "Number of Students",
-            "axis": {"format": "s"}
-          },
-          "color": {
-            "field": "sex",
-            "type": "nominal",
-            "scale": {
-              "domain": ["male", "female"],
-              "range": ["#90BAF9", "#FFB8F7"]
-            },
-            "legend": {"title": "Sex"}
-          },
-          "tooltip": [
-            {"field": "state", "type": "nominal", "title": "State"},
-            {"field": "stage", "type": "nominal", "title": "Education Stage"},
-            {"field": "sex", "type": "nominal", "title": "Sex"},
-            {"field": "students", "type": "quantitative", "title": "Number of Students", "format": "," }
-          ]
-        }
+        "field": "total_students",
+        "type": "quantitative",
+        "title": "Total Students",
+        "format": ","
       }
     ]
   },
   "config": {
-    "facet": {"columns": 1},
-    "view": {"stroke": "transparent"}
+    "view": {"stroke": "transparent"},
+    "axis": {"labelFontSize": 13, "titleFontSize": 12}
   }
 }

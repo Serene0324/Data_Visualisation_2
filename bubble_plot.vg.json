@@ -19,63 +19,65 @@
       "as": "student_ratio"
     },
     {
-      "calculate": "indexof(['Putrajaya', 'Labuan'], datum.state) > -1 ? 'Outlier' : 'Normal'",
-      "as": "outlier_flag"
+      "calculate": "datum.state == 'Putrajaya' ? 'Putrajaya' : 'Other'",
+      "as": "higher_student_ratio"
     }
   ],
   "layer": [
     {
       "mark": {
         "type": "circle",
-        "opacity": 0.75,
+        "opacity": 0.8,
         "stroke": "black",
-        "strokeWidth": 1
+        "strokeWidth": 0.5
       },
       "encoding": {
         "x": {
           "field": "total_population_actual",
           "type": "quantitative",
           "title": "Total Population (All Ages)",
-          "axis": {"grid": true},
-          "scale": {"type": "linear"}
+          "axis": {"grid": true}
         },
         "y": {
           "field": "total_students",
           "type": "quantitative",
           "title": "Total Student Enrolments",
-          "axis": {"grid": true},
-          "scale": {"type": "linear"}
+          "axis": {"grid": true}
         },
         "size": {
           "field": "student_ratio",
           "type": "quantitative",
           "title": "Student Ratio",
-          "scale": {"domain": [0, 0.5], "range": [5, 200]}
+          "scale": {"domain": [0, 0.3], "range": [10, 250]},
+          "legend": {
+            "title": "Student Ratio",
+            "format": ".0%"
+          }
         },
         "color": {
-          "field": "outlier_flag",
+          "field": "higher_student_ratio",
           "type": "nominal",
-          "title": "States",
           "scale": {
-            "domain": ["Normal", "Outlier"],
-            "range": ["#8E8994", "#47CDD7"]
-          }
+            "domain": ["Other", "Putrajaya"],
+            "range": ["grey", "red"]
+          },
+          "legend": {"title": "States"}
         },
         "tooltip": [
           {"field": "state", "type": "nominal", "title": "State"},
           {"field": "total_population_actual", "type": "quantitative", "title": "Population", "format": ","},
-          {"field": "total_students", "type": "quantitative", "title": "Number of Students", "format": ","},
+          {"field": "total_students", "type": "quantitative", "title": "Students", "format": ","},
           {"field": "student_ratio", "type": "quantitative", "title": "Student Ratio", "format": ".2%"}
         ]
       }
     },
     {
-      "transform": [{"filter": "datum.outlier_flag == 'Outlier'"}],
+      "transform": [{"filter": "datum.higher_student_ratio == 'Putrajaya'"}],
       "mark": {
         "type": "text",
-        "align": "center",
-        "dx": 20,  
-        "dy": 20,
+        "align": "left",
+        "dx": 10,
+        "dy": 5,
         "fontSize": 11,
         "fontWeight": "bold",
         "color": "#333"
@@ -84,6 +86,18 @@
         "x": {"field": "total_population_actual", "type": "quantitative"},
         "y": {"field": "total_students", "type": "quantitative"},
         "text": {"field": "state"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.state == 'Putrajaya'"}],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 30,
+        "dy": -20,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#333"
       }
     }
   ],

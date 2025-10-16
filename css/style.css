@@ -4,18 +4,27 @@ body *{
 
 h1 {
     font-weight: 900;
+    font-size: 35px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 25px;
 }
 
 body {
     background-color: lightgray;
+    margin: 0;
 }
 
 .page {
-    width: 850px;
+    width: 900px;
     background-color: white;
     margin: auto;
     padding: 50px;
-    padding-top: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .vis-container {
@@ -36,24 +45,33 @@ h1 {
 .description-right {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-left: 20px;
+    font-size: 15px;
 }
 
 .description-left-2-column p {
-  width: 90%;                
-  column-count: 2;           
-  column-gap: 3em;           
-  text-align: justify;      
-  margin: 0 auto; 
-  margin-left: 4px;          
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 90%;                
+    column-count: 2;           
+    column-gap: 3em;           
+    text-align: left;      
+    margin: 0 auto; 
+    margin-left: 4px;     
+    font-size: 15px;   
+    padding-bottom: 10px;  
 }
 
 .description-left p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-right: 20px;           
+    padding-right: 20px; 
+    font-size: 15px;          
 }
 
 .pure-g {
-    margin-bottom: 40px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 0;
+  background-color: #fafafa;
 }
 
 .small-font {
@@ -61,7 +79,7 @@ h1 {
 }
 
 .vega-bind label {
-  font-size: 11px;        
+  font-size: 12px;        
   font-weight: 600;  
   margin-left: 8px;     
   margin-right: 8px;             
@@ -69,7 +87,16 @@ h1 {
 
 .vega-bind select {
   width: 180px;        
-  font-size: 10px;     
-  padding: 5px;
+  font-size: 11px;     
+  padding: 10px;
   border-radius: 6px;
 }
+
+.chart-note {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+  margin-top: 5px;
+}
+

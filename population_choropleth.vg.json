@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height":380,
+  "height": 380,
   "projection": {
     "type": "mercator",
     "center": [109.5, 4],
@@ -12,7 +12,6 @@
       "data": { "graticule": { "step": [3, 3] } },
       "mark": { "type": "geoshape", "stroke": "lightgray", "fill": "none" }
     },
-
     {
       "data": {
         "url": "https://raw.githubusercontent.com/Serene0324/Data_Visualisation_2/main/ne_10m_admin_0_countries.json",
@@ -30,7 +29,6 @@
         "strokeWidth": 0.4
       }
     },
-
     {
       "data": {
         "url": "https://raw.githubusercontent.com/Serene0324/Data_Visualisation_2/main/ne_10m_admin_1_states_provinces.json",
@@ -60,7 +58,8 @@
           "field": "population_normalized",
           "type": "quantitative",
           "scale": { "scheme": "oranges" },
-          "title": "Population (% of total)"
+          "title": "Share of Total Population (%)",
+          "legend": { "format": ".0%" }  
         },
         "tooltip": [
           { "field": "properties.name", "type": "nominal", "title": "State" },
@@ -69,7 +68,7 @@
             "field": "population_normalized",
             "type": "quantitative",
             "format": ".2%",
-            "title": "Share of Total"
+            "title": "Share of Total Population"
           }
         ]
       }
