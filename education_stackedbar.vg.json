@@ -3,7 +3,7 @@
   "width": "container",
   "height": 250,
   "data": {
-    "url": "https://raw.githubusercontent.com/Serene0324/Data_Visualisation_2/main/enrolment_school_district.csv"
+    "url": "https://raw.githubusercontent.com/Serene0324/Data_Visualisation_2/main/data/enrolment_school_district.csv"
   },
   "transform": [{ "filter": "datum.sex == 'both'" }],
   "layer": [

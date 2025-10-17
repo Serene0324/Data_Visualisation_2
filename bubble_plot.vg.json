@@ -3,7 +3,7 @@
   "width": "container",
   "height": 350,
   "data": {
-    "url": "https://raw.githubusercontent.com/Serene0324/Data_Visualisation_2/main/population_enrolments.csv",
+    "url": "https://raw.githubusercontent.com/Serene0324/Data_Visualisation_2/main/data/population_enrolments.csv",
     "format": {
       "type": "csv",
       "parse": {

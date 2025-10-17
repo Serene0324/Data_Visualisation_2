@@ -39,7 +39,7 @@
           "lookup": "properties.name",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/Serene0324/Data_Visualisation_2/main/population_enrolments.csv"
+              "url": "https://raw.githubusercontent.com/Serene0324/Data_Visualisation_2/main/data/population_enrolments.csv"
             },
             "key": "state",
             "fields": ["total_population_actual"]
