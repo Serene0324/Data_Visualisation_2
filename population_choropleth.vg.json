@@ -17,11 +17,6 @@
         "url": "https://raw.githubusercontent.com/Serene0324/Data_Visualisation_2/main/ne_10m_admin_0_countries.json",
         "format": { "type": "topojson", "feature": "ne_10m_admin_0_countries" }
       },
-      "transform": [
-        {
-          "filter": "indexof(['Thailand','Indonesia','Brunei','Singapore','Philippines','Vietnam','Cambodia'], datum.properties.NAME) >= 0"
-        }
-      ],
       "mark": {
         "type": "geoshape",
         "fill": "#E0E0E0",
